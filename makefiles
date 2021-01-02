@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+read -p "File prefix:" name
+read -p "Number of files:" cnt
+
+  for ((x=1; x<=cnt; x++))
+  do
+	touch "./temp/$name$x"
+  done

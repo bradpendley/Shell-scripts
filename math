@@ -1,0 +1,12 @@
+#!/bin/bash
+
+fNum=0
+sNum=0
+
+read -p "Enter number:" fNum
+read -p "Enter number:" sNum
+
+echo "$fNum+$sNum="$[$fNum+$sNum];
+echo "$fNum-$sNum="$[$fNum-$sNum];
+echo "$fNum*$sNum="$[$fNum*$sNum];
+  

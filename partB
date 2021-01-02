@@ -1,0 +1,14 @@
+#!/bin/bash
+
+read -p "Enter directory to create:" dir
+read -p "Enter chmod permissions for directory:" dmod
+
+mkdir -m "$dmod" "$dir"
+
+read -r -p "Enter names of files to create separated by space: " -a files
+
+read -p "Enter umask permissions for the files:" fmod
+
+for file in "${files[@]}"; do 
+  (umask "$fmod" ; touch "$dir/$file")
+done

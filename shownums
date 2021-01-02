@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+read -e -p "Enter number:" -i 10 n
+
+  for ((x=1; x<=n; x++))
+  do
+     echo $x
+  done

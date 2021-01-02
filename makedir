@@ -1,0 +1,25 @@
+#!/bin/bash
+
+if [ $# -gt 0 ]; then
+ dir=$1
+else
+ read -p "Initial directory:" dir
+fi
+
+if [ ! -d $dir ]; then
+  echo "Intial directory is invalid"
+  echo "Please try again"
+  exit
+elif [ -d "$dir/Data" ]; then
+  read -p "Path exists [c to cancel or o to overwrite]" r
+  if [ r != "o" ]; then
+    exit
+  fi
+fi	
+
+rm -r "$dir/Data"
+
+mkdir "$dir/Data"
+mkdir "$dir/Data/Image"
+mkdir "$dir/Data/Cache"
+

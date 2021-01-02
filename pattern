@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+read -e -p "Enter number rows:" -i 3 row
+read -e -p "Enter number columns:" -i 4 col
+
+  for ((x=1; x<=row; x++))
+  do
+    for ((y=1; y<=col; y++))
+    do
+       p+="*"
+    done
+    echo "$p"
+    p=""
+  done

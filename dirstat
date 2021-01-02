@@ -1,0 +1,25 @@
+#!/bin/bash
+
+if [ $# -gt 0 ]; then
+ dir=$1
+ cd $dir
+fi
+
+echo "Files in" $( pwd )
+icnt=$(ls -a | wc -l)
+echo "Number of all items:" $icnt
+
+dcnt=$(ls -la | grep ^d | wc -l)
+echo "Number of all directories:" $dcnt
+
+ocnt=$(find -type f -name '*' | wc -l)
+echo "Number of all ordinary files:" $ocnt
+
+hicnt=$(find -name '.*' | wc -l)
+echo "Number of hidden items:" $hicnt
+
+hdcnt=$(ls -ap | grep "^\..*/$" | wc -l)
+echo "Number of hidden directories:" $hdcnt
+
+hfcnt=$(find -name '.*' -type f | wc -l)
+echo "Number of hidden files:" $hfcnt
